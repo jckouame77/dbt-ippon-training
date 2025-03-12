@@ -1,0 +1,17 @@
+{% macro payment_methods_list()  %}
+{% set payment_methods_query %}
+select distinct payment_method from 
+{{ source('dbt-ippon-training', 'ORDERS') }}
+order by 1
+{% endset %}
+
+{% set results = run_query(payment_methods_query) %}
+
+{% if execute %}
+{# Return the first column #}
+{% set results_list = results.columns[0].values() %}
+{% else %}
+{% set results_list = [] %}
+{% endif %}
+{{return(results_list)}}
+{% endmacro %}

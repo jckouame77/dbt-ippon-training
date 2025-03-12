@@ -1,0 +1,39 @@
+version:  2
+
+sources:
+  - name: dbt-ippon-training
+    database: DB_DBT_JEANCLAUDEKOUAME_DEV
+    schema: SOURCE
+    tables:
+      - name: ORDERS
+        description: table orders description
+        columns:
+          - name: IDENTIFIER  
+            description: this is a unique identifier  
+            tests:
+              - unique:
+                  config:
+                    severity: 'warn'
+              - not_null  
+          - name: RESTAURANT_IDENTIFIER
+            description: the  restaurant identifier   
+          - name: DISHES_IDS
+            description:  the dishes
+          - name:  PAYMENT_METHOD
+            description: method of payment
+          - name: AMOUNT
+            description: 'amount'
+                
+      - name: DISHES          
+            
+
+              
+      - name: RESTAURANTS
+        description: table restaurants description
+        columns:
+          - name: restaurant_identifier
+          - name: name
+            tests:
+              - unique
+          - name: address
+          - name: turnover
