@@ -1,6 +1,6 @@
 --{% set payment_methods = payment_methods_list() %}
 
-{% set payment_methods = dbt_utils.get_column_values(table=source('dbt-ippon-training', 'ORDERS') , column='payment_method') %}
+{% set payment_methods = dbt_utils.get_column_values(table=source('dbt_ippon_training', 'ORDERS') , column='payment_method') %}
 
 
 

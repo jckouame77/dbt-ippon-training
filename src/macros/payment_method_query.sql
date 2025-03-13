@@ -1,7 +1,7 @@
 {% macro payment_methods_list()  %}
 {% set payment_methods_query %}
 select distinct payment_method from 
-{{ source('dbt-ippon-training', 'ORDERS') }}
+{{ source('dbt_ippon_training', 'ORDERS') }}
 order by 1
 {% endset %}
 
