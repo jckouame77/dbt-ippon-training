@@ -1,4 +1,4 @@
-with stg_restaurants(
+with stg_restaurants as (
     select * from {{ source('dbt-ippon-training', 'RESTAURANTS') }}
 )
 

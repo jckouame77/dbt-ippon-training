@@ -10,5 +10,7 @@ select distinct
     , payment_method::string as payment_method
     , amount::number(30, 8) as amount
     , created_at::timestamp as created_at
-from {{ source('dbt-ippon-training', 'ORDERS') }}
+
+from {{mockable_source('dbt-ippon-training', 'ORDERS' )}}
+
    
