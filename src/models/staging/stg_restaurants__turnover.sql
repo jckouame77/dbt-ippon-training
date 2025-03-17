@@ -2,12 +2,12 @@ with stg_orders as (
 
  select  RESTAURANT_IDENTIFIER 
                 , SUM(AMOUNT) as turnover
-        from {{ source('dbt-ippon-training', 'ORDERS') }}
+        from {{ source('dbt_ippon_training', 'ORDERS') }}
         group by   RESTAURANT_IDENTIFIER
 ),
 
 stg_restaurants as ( select IDENTIFIER, NAME, address
-        from {{ source('dbt-ippon-training', 'RESTAURANTS') }}
+        from {{ source('dbt_ippon_training', 'RESTAURANTS') }}
 
 )
 

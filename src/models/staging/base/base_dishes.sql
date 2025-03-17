@@ -5,4 +5,4 @@ select
     , production_cost
     , type
 from 
-   {{ source('dbt-ippon-training', 'DISHES') }}
+   {{ source('dbt_ippon_training', 'DISHES') }}
