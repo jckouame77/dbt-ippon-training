@@ -34,16 +34,18 @@ models:
     marts:
       schema: silver
       +materialized: table
-
-    staging:
-      
-      
+  
+  elementary:
+    +schema: 'elementary'
+    
+       
 
 seeds:
   schema: seeds
   
 vars:
     nb_restaurants_to_show: 4
+    elementary_full_refresh: true
   
       
 

@@ -6,6 +6,20 @@ models:
       - dbt_utils.equality:
           compare_model: ref('expect_restaurants__benefits_orders_hourly')
           tags: 'unit_testing'
+          exclude_columns:  
+            - JOB_INSERT_ID
+            - JOB_INSERT_AT_UTC
+            - RUN_STARTED_AT_UTC
+            - JOB_MODIFIED_ID
+            - JOB_MODIFIED_AT_UTC
+         
+
+           
+           
+           
+
+       
+
 
 
 
@@ -13,6 +27,9 @@ unit_tests:
   - name: test_is_valid_sum
     description: "Check my is_valid_sum in restaurants__benefits_orders"
     model: restaurants__benefit_orders_hourly
+    overrides:
+      macros:
+        is_incremental: false
     given:
       - input: ref('base_dishes')
         rows:

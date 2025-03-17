@@ -2,7 +2,8 @@ version:  2
 
 sources:
   - name: dbt_ippon_training
-    database: DB_DBT_JEANCLAUDEKOUAME_DEV
+    #database: DB_DBT_JEANCLAUDEKOUAME_DEV
+
     schema: SOURCE
     tables:
       - name: ORDERS

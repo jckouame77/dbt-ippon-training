@@ -11,6 +11,6 @@ select distinct
     , amount::number(30, 8) as amount
     , created_at::timestamp as created_at
 
-from {{mockable_source('dbt-ippon-training', 'ORDERS' )}}
+from {{mockable_source('dbt_ippon_training', 'ORDERS' )}}
 
    
